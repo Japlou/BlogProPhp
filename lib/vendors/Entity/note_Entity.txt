@@ -1,0 +1,3 @@
+/*
+Stocke les déclarations des différentes entités doctrine.
+ */
