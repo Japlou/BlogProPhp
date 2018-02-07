@@ -1,0 +1,21 @@
+{
+    "name": "magalie/blog-pro-php",
+    "description": "Projet 5 de la formation OpenClassRoom: mon blog pro",
+    "authors": [
+        {
+            "name": "nefise magalie",
+            "email": "nefise.magalie@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "app/Frontend/Controller",
+            "Entitys\\": "lib/vendors/Entity",
+            "Models\\": "lib/vendors/Model",
+            "OCFrams\\": "lib/OCFram"
+        }
+    },
+    "require": {
+        "twig/twig": "^1.35"
+    }
+}
