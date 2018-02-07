@@ -1,0 +1,69 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}NEFISE Magalie - Mon blog professionnel{% endblock %}
+
+{% block content %}
+
+  <body id="page-top" data-psy="scroll" data-target=".navbar">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="../Web/Assets/curriculum-vitae/CV_nefise_magalie.pdf">Curriculum Vitae</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Acceuil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../posts">Liste des Articles</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="create">Crees des Articles</a>
+            </li>
+            <li class="nav-item" href="#page-top">
+              <a class="nav-link"  href="/#contact" >Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <!-- Page Header -->
+    <header class="masthead" style="background-image: url('../Web/Assets/img/post-bg.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h2>{{ titre }}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h2 class="subheading">{{ chapo }}</h2>
+              <span class="meta">Post cree par <a href="#">{{ auteur }}</a> en date du : {{ dateCreation }}</span>
+            </div>
+            <p>{{ contenu }}</p>
+            <div class="post-preview">
+              <p class="post-meta">Dernière modification le {{ dateModification }}.</p>
+            </div>
+            <div class="clearfix">
+              <a class="btn btn-secondary float-left" href="update-{{id}}" style="background-image:radial-gradient(grey, black);">Modifier</a>
+              <a class="btn btn-secondary float-right" href="validation-{{id}}" style="background-image:radial-gradient(grey, black);">Supprimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+{% endblock %}
+    
