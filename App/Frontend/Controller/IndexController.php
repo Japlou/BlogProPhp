@@ -1,25 +1,24 @@
 <?php
 
 
-namespace Controllers;
+namespace App\Frontend\Controller;
 
 use OCFrams\BackController;
+use OCFrams\HTTPRequest;
 
 
 class IndexController extends BackController
 {
 	
-	public function indexAction(){
+	public function indexAction(HTTPRequest $request){
 
-		 echo $this->twig->render('Index/index.html.twig');
+		 echo $this->twig->render('Views/index.html.twig');
+
 	}
-
-
-	public function contactAction(){
-
-		require '../Src/AppBundle/Form/Contact.php';
-
-		 echo $this->twig->render('Index/contact.html');
+	
+	public function contactAction()
+	{
+		 echo $this->twig->render('Views/contact.html');
 	}
 
 }

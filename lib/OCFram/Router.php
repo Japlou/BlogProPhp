@@ -2,51 +2,68 @@
 
 namespace OCFrams;
 
+
 /**
  * Class Router
  * @package App
  */
 class Router
 {
-    /**
-     * @var Request
-     */
-    private $request;
-
+    
+    
     /**
      * @var array
      */
-    private $routes = [];
+    protected $routes = [];
 
-    /**
-     * Router constructor
-     * @param Request $request
-     */
-    public function __construct($request)
-    {
-        $this->request = $request;
-    }
-
+    const NO_ROUTE = 1;
     /**
      * @param Route $route
-     * @throws \Exception
-     */
+    */
     public function add(Route $route)
     {
-        if (isset($this->routes[$route->getName()])) {
-            throw new \Exception("La route existe déjà !");
+        if (!in_array($route, $this->routes))
+        {
+             $this->routes[] = $route;
+             
         }
-        $this->routes[$route->getName()] = $route;
     }
 
-    /**
-     * @return Route
-     */
-    public function match() 
+    public function getRoute($url)
     {
-        $routes = array_filter($this->routes, function(Route $route) {
-            return $route->match($this->request->getUri());
-        });
-        return count($routes) ? array_shift($routes) : null;
+        foreach ($this->routes as $route)
+        {
+           
+            // Si la route correspond à l'URL
+            if (($varsValues = $route->match($url)) !== false)
+            {
+               
+                // Si elle a des variables
+                if ($route->hasVars())
+                {
+                    $varsNames = $route->varsNames();
+                    $listVars = [];
+                   
+                    // On crée un nouveau tableau clé/valeur
+                    // (clé = nom de la variable, valeur = sa valeur)
+                    foreach ($varsValues as $key => $match)
+                    {
+                        // La première valeur contient entièrement la chaine capturée (voir la doc sur preg_match)
+                        if ($key !== 0)
+                        {
+                            $listVars[$varsNames[$key - 1]] = $match;      
+                        }
+                    }
+ 
+                    // On assigne ce tableau de variables � la route
+                    $route->setVars($listVars);
+                   
+                }
+ 
+                return $route;
+            }
+        }
+ 
+        throw new \RuntimeException('Aucune route ne correspond à l\'URL', self::NO_ROUTE);
     }
 }

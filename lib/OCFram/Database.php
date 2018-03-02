@@ -4,8 +4,9 @@
 namespace OCFrams;
 
 use \PDO;
-use Models\PostManager;
-use Entitys\Post;
+use lib\vendors\Entity\Post;
+use lib\vendors\model\PostManager;
+use OCFrams\Instance_db;
 
 /**
  * class Database
@@ -34,12 +35,6 @@ class Database
 	 */
 	private $pdo;
 
-	public function newInstance(HTTPRequest $request)
-	{
-		return new Database($request);
-
-	}
-
 
 	/**
 	 * [__construct va recuperer les informations de la methode getPDO]
@@ -59,19 +54,14 @@ class Database
 	/**
 	 * @method [return $pdo] [getPDO] [Connexion a la BDD en utilisant PDO]
 	 */
-	
 	public function getPDO() {
 		if($this->pdo === null) { // s'assure que la BDD est pas deja connectee.
 			$pdo = new PDO('mysql:dbname=' . $this->db_name . ';host=' . $this->db_host . '', '' . $this->db_user . '', '' . $this->db_pass . '');
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->pdo = $pdo;
-		}
-		return $this->pdo;
-	}
 
-	public function getManager($model)
-	{
-		return new PostManager($this, $model);
+		}
+		return $this->pdo;	
 	}
 
 }

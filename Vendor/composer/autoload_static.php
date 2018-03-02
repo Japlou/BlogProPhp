@@ -7,6 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInit38220975e3f23fc5275cd8902bf16b6c
 {
     public static $prefixLengthsPsr4 = array (
+        'l' => 
+        array (
+            'lib\\vendors\\Model\\' => 18,
+            'lib\\vendors\\Entity\\' => 19,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -15,21 +20,21 @@ class ComposerStaticInit38220975e3f23fc5275cd8902bf16b6c
         array (
             'OCFrams\\' => 8,
         ),
-        'M' => 
+        'A' => 
         array (
-            'Models\\' => 7,
-        ),
-        'E' => 
-        array (
-            'Entitys\\' => 8,
-        ),
-        'C' => 
-        array (
-            'Controllers\\' => 12,
+            'App\\Frontend\\Controller\\' => 24,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'lib\\vendors\\Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib/vendors/Model',
+        ),
+        'lib\\vendors\\Entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib/vendors/Entity',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -38,17 +43,9 @@ class ComposerStaticInit38220975e3f23fc5275cd8902bf16b6c
         array (
             0 => __DIR__ . '/../..' . '/lib/OCFram',
         ),
-        'Models\\' => 
+        'App\\Frontend\\Controller\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/lib/vendors/Model',
-        ),
-        'Entitys\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/lib/vendors/Entity',
-        ),
-        'Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/Frontend/Controller',
+            0 => __DIR__ . '/../..' . '/App/Frontend/Controller',
         ),
     );
 

@@ -1,7 +1,9 @@
 <?php
 namespace OCFrams;
- 
-abstract class ApplicationComponent
+ /**
+  * class ApplicationComponent [La class se charge de stocket, pendant la construction de l'objet, l'instance de l'application exécutée.]
+  */
+class ApplicationComponent
 {
   protected $app;
  

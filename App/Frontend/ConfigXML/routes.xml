@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<routes>
+	<route url="/" module="IndexController" action="indexAction"/>
+	<route url="/contact" module="IndexController" action="contactAction"/>
+	<route url="/posts" module="PostController" action="listAction"/>
+	<route url="/create"  module="PostController" action="createAction"/>
+	<route url="/show-([0-9]+)"  vars="id"  module="PostController" action="showAction" />
+	<route url="/delete-([0-9]+)" vars="id" module="PostController" action="deleteAction"/>
+	<route url="/validation-([0-9]+)" vars="id" module="PostController" action="validationAction"/>
+	<route url="/update-([0-9]+)" vars="id" module="PostController" action="updateAction"/>
+</routes>
