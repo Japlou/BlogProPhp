@@ -1,16 +1,19 @@
 <?php
 
-namespace Entitys;
+namespace lib\vendors\Entity;
+
+
 
 /**
  * Une classe representent un Post.
  */
 
-class Post {
+class Post
+{
 
-	 private $id, $titre, $auteur, $chapo, $contenu, $dateCreation, $dateModification;
-
-
+	protected $id, $titre, $auteur, $chapo, $contenu, $dateCreation, $dateModification;
+	
+	
 	//GETTERS //
 	
 	public function  getid()
@@ -46,27 +49,27 @@ class Post {
 	
 	public function setId($id)
 	{
-			$this->id = (string) $id;		
+		$this->id = (string) $id;		
 	}
 
 	public function setTitre($titre)
 	{		
-			$this->titre = (string) $titre;	
+		$this->titre = (string) $titre;	
 	}
 
 	public function setChapo($chapo)
 	{
-			$this->chapo = (string) $chapo;	
+		$this->chapo = (string) $chapo;	
 	}
 
 	public function setContenu($contenu)
 	{	
-			$this->contenu = (string) $contenu;
+		$this->contenu = (string) $contenu;
 	}
 
 	public function setAuteur($auteur)
 	{
-			$this->auteur = (string) $auteur;
+		$this->auteur = (string) $auteur;
 	}
 
 	public function setDateModification($dateModification)

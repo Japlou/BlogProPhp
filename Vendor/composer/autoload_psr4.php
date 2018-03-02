@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'lib\\vendors\\Model\\' => array($baseDir . '/lib/vendors/Model'),
+    'lib\\vendors\\Entity\\' => array($baseDir . '/lib/vendors/Entity'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'OCFrams\\' => array($baseDir . '/lib/OCFram'),
-    'Models\\' => array($baseDir . '/lib/vendors/Model'),
-    'Entitys\\' => array($baseDir . '/lib/vendors/Entity'),
-    'Controllers\\' => array($baseDir . '/app/Frontend/Controller'),
+    'App\\Frontend\\Controller\\' => array($baseDir . '/App/Frontend/Controller'),
 );

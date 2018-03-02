@@ -1,0 +1,106 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}NEFISE Magalie - Mon blog professionnel{% endblock %}
+
+{% block content %}
+  <body id="page-top" data-psy="scroll" data-target=".navbar">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="Web/Assets/curriculum-vitae/CV_nefise_magalie.pdf">Curriculum Vitae</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/posts">Liste des Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create">Créer un Article</a>
+            </li>
+            <li class="nav-item" href="#page-top">
+              <a class="nav-link" href="#contact" >Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('Web/Assets/img/assis-bg.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>MON BLOG PRO</h1>
+              <span class="subheading">NEFISE MAGALIE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <img src="Web/Assets/img/logo-bg.png">
+          <h2>La formation délivrée chez OpenClassRoom, cursus développeuse web </h2>
+          <P> Mon blog traitera de la formation à distance que je fais depuis  un an chez OpenClassRoom, vous pourrez suivre des articles sur l'avis d'autres élèves et en poster un vous-même. Venez y trouverez des avis d’autres élèves et pourrez en poster un vous-même. Venez nombreux nous parler de votre expérience !
+          </P>
+
+          <h2>Mon Avis sur la formation de developpeuse web</h2>
+          <p>Cet organisme de formation à distance est d'après moi le meilleure sur le marché actuellement en ce qui concerne les formations du numérique. <br />
+          Je me suis investis dans la formation de développeur web afin d'acquérir plus de compétences à faire valoir sur le marché du travail.<br />
+          La formation est bien conçue, chaque cours est suivi d’exercices d’application permettant de vérifier l’assimilation des connaissances avant de passer à la prochaine étape, des projets concrets à construire et exposer lors d'une évaluation faite en visioconférence. <br />
+          Chaque étape des modules est à faire valider par un autre mentor que celui qui nous suis dans la face de construction du projet. Enfin, les étudiants ayant validé tout le cursus peuvent postuler pour un stage en entreprise.<br />
+          Chaque étudiant est suivi par des mentors choisie suivent leur domaine de compétence et qui sont des professionnelles du métier.
+          L’examen se déroule suivent un planning établie par l’organisme  après avoir validé l’ensemble des modules devant un jury.<br />
+          Etant arrivée presque au bout du cursus, je peux témoigner que cette formation m’a apporté une méthode de travail efficace, et a développé mes capacités d’analyse.
+
+
+           </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <!--Envoie de mail (formulaire de contact)-->
+          <h2 id="contact">Contact</h2>
+            <!--appelle du fichier php -->
+          <form name="contact" id="contact" method="post" action="contact">
+            <input type="hidden" name="subject" value="Formulaire de contact">
+            <input type="hidden" name="access" value="stopspam">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label for="name"> Nom et prénom</label>
+                <input type="text" name="name" class="form-control" placeholder="Nom et prénom" id="name" required data-validation-required-message="Veuillez entrer vos noms ett prénoms.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label for="email"> Adresse Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Adresse Email" id="email" required data-validation-required-message="Veuillez votre adresse email.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label for="message">Message</label>
+                <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" required data-validation-required-message="Veuillez entrer un message."></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-secondary" id="sendMessageButton" style="background-image:radial-gradient(grey, black);">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

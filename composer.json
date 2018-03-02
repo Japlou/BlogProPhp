@@ -1,5 +1,5 @@
 {
-    "name": "magalie/blog-pro-php",
+    "name": "magalie/php-blog",
     "description": "Projet 5 de la formation OpenClassRoom: mon blog pro",
     "authors": [
         {
@@ -9,9 +9,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "Controllers\\": "app/Frontend/Controller",
-            "Entitys\\": "lib/vendors/Entity",
-            "Models\\": "lib/vendors/Model",
+            "App\\Frontend\\Controller\\": "App/Frontend/Controller",
+            "lib\\vendors\\Entity\\": "lib/vendors/Entity",
+            "lib\\vendors\\Model\\": "lib/vendors/Model",
             "OCFrams\\": "lib/OCFram"
         }
     },
